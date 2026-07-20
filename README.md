@@ -1,7 +1,7 @@
 # PaySplitter-Releases
 
 <h1 align="center">
-  <img src="icon.png" width="120" alt="Pay Splitter Icon"><br>
+  <img src="icon-publish.png" width="120" alt="Pay Splitter Icon"><br>
   Pay Splitter
 </h1>
 
