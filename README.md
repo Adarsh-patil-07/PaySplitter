@@ -1,7 +1,7 @@
 # PaySplitter-Releases
 
 <h1 align="center">
-  <img src="icon-publish.png" width="120" alt="Pay Splitter Icon"><br>
+  <img src="./assets/icon-publish.png" width="120" alt="Pay Splitter Icon"><br>
   Pay Splitter
 </h1>
 
@@ -44,7 +44,6 @@ Don't want to download anything? Use the full web version instantly on any devic
 
 <hr>
 
-
 <p align="center">
-  <img src="Pay-Splitter-Banner.PNG" alt="Pay Splitter App Preview Banner">
+  <img src="./assets/Pay-Splitter-Banner.PNG" alt="Pay Splitter App Preview Banner">
 </p>
