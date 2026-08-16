@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — PaySplitter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0a0d;
+    --surface: #12151a;
+    --surface-2: #1a1e24;
+    --line: rgba(255,255,255,0.08);
+    --blue: #4f9dff;
+    --violet: #9b6bff;
+    --violet-soft: #b794ff;
+    --red: #ef4444;
+    --green: #22c55e;
+    --text: #f2f1f7;
+    --text-muted: #9a9aa5;
+    --text-faint: #666570;
+    --radius: 14px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .glow{
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(600px circle at 12% -5%, rgba(79,157,255,0.14), transparent 55%),
+      radial-gradient(500px circle at 92% 8%, rgba(155,107,255,0.12), transparent 55%);
+  }
+
+  .wrap{
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 120px;
+  }
+
+  header{
+    padding: 72px 0 44px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mark{
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #4f9dff, #7c6bff 55%, #9b6bff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 26px -8px rgba(120,110,255,0.55);
+    margin-bottom: 26px;
+  }
+
+  .mark svg{ width: 26px; height: 26px; }
+
+  .brand-tag{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background: linear-gradient(90deg, #4f9dff, #a06bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+
+  h1{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 38px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .subtitle{
+    color: var(--text-muted);
+    font-size: 16px;
+    max-width: 48ch;
+  }
+
+  .meta-row{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .badge{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--violet-soft);
+    background: rgba(155,107,255,0.12);
+    border: 1px solid rgba(155,107,255,0.28);
+    padding: 5px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+  }
+
+  .meta-plain{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+
+  nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,13,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 5;
+  }
+
+  nav a{
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    white-space: nowrap;
+  }
+
+  nav a:hover{
+    color: var(--text);
+    background: var(--surface-2);
+    border-color: var(--line);
+  }
+
+  section{
+    padding: 52px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 84px;
+  }
+
+  section:last-of-type{ border-bottom: none; }
+
+  .sec-head{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .sec-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--blue);
+    background: rgba(79,157,255,0.10);
+    border: 1px solid rgba(79,157,255,0.25);
+    padding: 3px 9px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  h2{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  p{
+    color: #d7d5e0;
+    font-size: 15.5px;
+    margin-bottom: 14px;
+  }
+
+  p.muted{ color: var(--text-muted); }
+
+  .card-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .data-card{
+    background: linear-gradient(160deg, #101914, #0d1210);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+  }
+
+  .data-card.full{ grid-column: 1 / -1; }
+
+  .data-card .icon-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .data-card svg{ width: 18px; height: 18px; color: var(--violet-soft); flex-shrink: 0; }
+
+  .data-card h3{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .data-card p{
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .use-list{
+    list-style: none;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .use-list li{
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: #d7d5e0;
+  }
+
+  .use-list svg{
+    width: 16px; height: 16px;
+    color: var(--blue);
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .no-sell{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: rgba(155,107,255,0.08);
+    border: 1px solid rgba(155,107,255,0.22);
+    border-radius: var(--radius);
+  }
+
+  .no-sell svg{ width: 20px; height: 20px; color: var(--violet-soft); flex-shrink: 0; }
+
+  .no-sell p{
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .rights-box{
+    background: linear-gradient(160deg, #1a1214, #12100f);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-top: 18px;
+  }
+
+  .rights-box .label{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+
+  .steps{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 4px;
+  }
+
+  .step{
+    display: flex;
+    gap: 14px;
+    padding: 9px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.06);
+  }
+
+  .step:last-child{ border-bottom: none; }
+
+  .step-dot{
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    flex-shrink: 0;
+  }
+
+  .step p{ margin: 0; font-size: 14.5px; color: #d7d5e0; }
+  .step p strong{ color: var(--text); font-weight: 600; }
+  .step code{
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(239,68,68,0.12);
+    color: #ff8080;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  .warning-note{
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--text-faint);
+    margin-top: 16px;
+  }
+  .warning-note svg{ width: 14px; height: 14px; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+
+  .service-card{
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .service-logo{
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  .service-logo.firebase{ background: linear-gradient(135deg, #FFA000, #FFCA28); color: #1a1a1a; }
+  .service-logo.formspree{ background: linear-gradient(135deg, #4f9dff, #7c6bff); color: #fff; }
+
+  .service-card h3{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .service-card p{ font-size: 14px; margin-bottom: 0; color: var(--text-muted); }
+
+  .contact-card{
+    background: linear-gradient(160deg, var(--surface), var(--surface-2));
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 32px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .contact-card .icon-circle{
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(79,157,255,0.14);
+    border: 1px solid rgba(79,157,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .contact-card .icon-circle svg{ width: 20px; height: 20px; color: var(--blue); }
+
+  .contact-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.06);
+    font-size: 14px;
+  }
+  .contact-row:last-of-type{ border-bottom: none; }
+  .contact-row .k{ color: var(--text-faint); }
+  .contact-row .v{ color: var(--text); font-weight: 500; }
+
+  .contact-card a.email{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14.5px;
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .contact-card a.email:hover{
+    border-color: var(--blue);
+    transform: translateY(-1px);
+  }
+
+  footer{
+    padding-top: 48px;
+    text-align: center;
+  }
+
+  footer p{
+    font-size: 13px;
+    color: var(--text-faint);
+    margin: 0;
+  }
+
+  @media (max-width: 640px){
+    header{ padding: 48px 0 32px; }
+    h1{ font-size: 29px; }
+    .card-grid{ grid-template-columns: 1fr; }
+    section{ padding: 40px 0; }
+    nav{ gap: 6px; }
+    nav a{ font-size: 12px; padding: 6px 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .contact-card a.email:hover{ transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C10 2 9 3.5 9 5.5C9 7 9.7 8 10.5 8.7C9 9.2 8 10.6 8 12.2V13H16V12.2C16 10.6 15 9.2 13.5 8.7C14.3 8 15 7 15 5.5C15 3.5 14 2 12 2Z" fill="white"/>
+        <path d="M6 22V19.5C6 17 8 15 10.5 15H13.5C16 15 18 17 18 19.5V22" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand-tag">PaySplitter</div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">How we collect, use, and protect your information — written in plain language, not legal boilerplate.</p>
+    <div class="meta-row">
+      <span class="badge">Last updated: August 2026</span>
+      <span class="meta-plain">v1.1</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#collect">Data we collect</a>
+    <a href="#use">How it's used</a>
+    <a href="#rights">Your rights</a>
+    <a href="#third-party">Third parties</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="collect">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>Information we collect</h2>
+    </div>
+    <p class="muted">When you use PaySplitter, we only collect what's needed to run the app well — nothing more.</p>
+
+    <div class="card-grid">
+      <div class="data-card">
+        <div class="icon-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <h3>Profile information</h3>
+        </div>
+        <p>Name, email address, and an optional custom avatar you upload during or after sign-up.</p>
+      </div>
+      <div class="data-card">
+        <div class="icon-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
+          <h3>App data</h3>
+        </div>
+        <p>Trips, groups, shared expenses, settlements, custom payment details, and digital pot balances.</p>
+      </div>
+      <div class="data-card full">
+        <div class="icon-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <h3>Feedback &amp; communications</h3>
+        </div>
+        <p>Voluntary ratings, suggestions, and messages you submit through our in-app feedback system.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="use">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>How we use your data</h2>
+    </div>
+    <p class="muted">The data we collect is strictly used to provide the core functionality and reliability of the app:</p>
+
+    <ul class="use-list">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Sync your expenses and balances seamlessly across all your devices, in real time.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Share expense details securely with the specific users you invite to your trips or groups.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Provide secure authentication and protect your account from unauthorized access.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Review feedback to improve app features, performance, and stability.</span>
+      </li>
+    </ul>
+
+    <div class="no-sell">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+      <p>We do not sell, rent, monetize, or trade your personal data to any third parties.</p>
+    </div>
+  </section>
+
+  <section id="rights">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>Data deletion &amp; your rights</h2>
+    </div>
+    <p class="muted">You have full control over your personal data — including the right to permanently delete your account and everything tied to it, at any time. This is your <strong style="color:var(--text)">Right to be Forgotten</strong>.</p>
+
+    <div class="rights-box">
+      <div class="label">How to delete your data — in the app</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-dot">1</div>
+          <p>Tap your <strong>Profile avatar</strong> in the top header</p>
+        </div>
+        <div class="step">
+          <div class="step-dot">2</div>
+          <p>Tap <strong>About PaySplitter</strong></p>
+        </div>
+        <div class="step">
+          <div class="step-dot">3</div>
+          <p>Tap <strong>Privacy Policy</strong></p>
+        </div>
+        <div class="step">
+          <div class="step-dot">4</div>
+          <p>Scroll to the bottom and tap <strong>Delete Account</strong></p>
+        </div>
+        <div class="step">
+          <div class="step-dot">5</div>
+          <p>Type <code>DELETE</code> to confirm</p>
+        </div>
+      </div>
+      <div class="warning-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0z"/></svg>
+        <span>Your account, profile records, and login credentials are erased immediately. This cannot be undone.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="third-party">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>Third-party services &amp; security</h2>
+    </div>
+    <p class="muted">We rely on a small set of trusted infrastructure partners to keep your account and data secure.</p>
+
+    <div class="service-card">
+      <div class="service-logo firebase">F</div>
+      <div>
+        <h3>Google Firebase</h3>
+        <p>Secure authentication and real-time database hosting with industry-standard encryption protocols — HTTPS/TLS in transit, encrypted at rest.</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-logo formspree">Fs</div>
+      <div>
+        <h3>Formspree</h3>
+        <p>Secure handling of voluntary feedback forms submitted through the app.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>Contact us</h2>
+    </div>
+    <p class="muted">Questions, concerns, or requests about this policy or your data? Reach out directly.</p>
+
+    <div class="contact-card">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6l9 7 9-7"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+      </div>
+      <h3 style="font-family:'Space Grotesk',sans-serif; font-size:16px; margin-bottom:10px;">PaySplitter Support</h3>
+
+      <div class="contact-row"><span class="k">Developer</span><span class="v">Adarsh Patil</span></div>
+      <div class="contact-row"><span class="k">Response time</span><span class="v">2–5 business days</span></div>
+
+      <a class="email" href="mailto:adaepublic01@gmail.com">
+        adaepublic01@gmail.com
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ♥ by Adarsh Patil · Copyright © 2026 PaySplitter. All rights reserved.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
