@@ -1,41 +1,76 @@
-# Privacy Policy for Pay Splitter
-Last Updated: August 2026
-Welcome to Pay Splitter. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your data when you use our application.
----
-### 1. Information We Collect
-When you use Pay Splitter, we collect the following information:
-- **Profile Information:** Basic account details such as your name, email address, and optional custom profile avatar picture uploaded during or after authentication.
-- **App Data:** Information related to your trips, groups, shared expenses, settlements, custom payment details, and digital pot balances.
-- **Feedback & Communications:** Voluntary ratings, suggestions, and feedback messages you submit through our in-app feedback system.
----
-### 2. How We Use Your Data
-The data we collect is strictly used to provide the core functionality and reliability of the app:
-- To seamlessly sync your expenses and balances across all your devices in real-time.
-- To share expense details securely with the specific users you invite to your trips or groups.
-- To provide secure authentication and protect your account from unauthorized access.
-- To review feedback and improve app features, performance, and stability.
-**We do not sell, rent, monetize, or trade your personal data to any third parties.**
----
-### 3. Data Deletion and Your Rights
-You have full control over your personal data and the right to permanently delete your account and associated personal data at any time ("Right to be Forgotten").
-- **How to delete your data in the app:**
-  1. Open the app and tap your **Profile avatar** in the top header.
-  2. Tap **About PaySplitter**.
-  3. Tap **Privacy Policy**.
-  4. Scroll to the bottom and tap **Delete Account**.
-  5. Type `DELETE` to confirm.
-- **Effect of deletion:** Your account, profile records, and login credentials will be permanently erased immediately. This action cannot be undone.
----
-### 4. Third-Party Services & Security
-We utilize trusted third-party services to ensure enterprise-grade security and reliability:
-- **Google Firebase:** Secure authentication and real-time database hosting with industry-standard encryption protocols (HTTPS/TLS and encrypted data at rest).
-- **Formspree:** Secure handling of voluntary feedback forms submitted through the app.
----
-### 5. Contact Us
-If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:
-**Pay Splitter Support**  
-- **Developer:** Adarsh Patil  
-- **Email:** adaepublic01@gmail.com  
-- **Response Time:** Typically within 2–5 business days.
+Pay Splitter Privacy Policy
 
-This is the Updated Privacy & Policy and i have attached a screen from which you can use color to match the app theme
+Last Updated: August 2026
+
+Welcome to Pay Splitter.
+
+We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your data when you use our application.
+
+
+1. Information We Collect
+
+When you use Pay Splitter, we collect the following information:
+
+• Profile Information: Basic account details such as your name, email address, and optional custom profile avatar picture uploaded during or after authentication.
+
+• App Data: Information related to your trips, groups, shared expenses, settlements, custom payment details, and digital pot balances.
+
+• Feedback & Communications: Voluntary ratings, suggestions, and feedback messages you submit through our in-app feedback system.
+
+
+2. How We Use Your Data
+
+The data we collect is strictly used to provide the core functionality and reliability of the app:
+
+• To seamlessly sync your expenses and balances across all your devices in real-time.
+
+• To share expense details securely with the specific users you invite to your trips or groups.
+
+• To provide secure authentication and protect your account from unauthorized access.
+
+• To review feedback and improve app features, performance, and stability.
+
+We do not sell, rent, monetize, or trade your personal data to any third parties.
+
+
+3. Data Deletion and Your Rights
+
+You have full control over your personal data and the right to permanently delete your account and associated personal data at any time ("Right to be Forgotten").
+
+How to delete your data in the app:
+
+1. Open the app and tap your Profile avatar in the top header.
+
+2. Tap About PaySplitter.
+
+3. Tap Privacy Policy.
+
+4. Scroll to the bottom and tap Delete Account.
+
+5. Type DELETE to confirm.
+
+Effect of deletion:
+
+Your account, profile records, and login credentials will be permanently erased immediately. This action cannot be undone.
+
+
+4. Third-Party Services & Security
+
+We utilize trusted third-party services to ensure enterprise-grade security and reliability:
+
+• Google Firebase: Secure authentication and real-time database hosting with industry-standard encryption protocols (HTTPS/TLS and encrypted data at rest).
+
+• Formspree: Secure handling of voluntary feedback forms submitted through the app.
+
+
+5. Contact Us
+
+If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:
+
+Pay Splitter Support
+
+Developer: Adarsh Patil
+
+Email: [adaepublic01@gmail.com](mailto:adaepublic01@gmail.com)
+
+Response Time: Typically within 2–5 business days.
