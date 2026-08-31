@@ -536,6 +536,12 @@
       color: #ffffff;
       box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
     }
+    
+    .partner-logo.gps {
+      background: linear-gradient(135deg, #10b981, #34d399);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+    }
 
     /* Contact Card */
     .contact-container {
@@ -753,7 +759,15 @@
           <p>Details regarding your trips, shared expense entries, payer/borrower splits, settlement receipts, and digital pot balances.</p>
         </div>
 
-        <div class="glass-card full-width">
+        <div class="glass-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Location Data (GPS)</h3>
+          <p>Opt-in precise GPS location data during active trips. Used strictly for automatic distance splitting, route tracking, and geolocating expense points.</p>
+        </div>
+
+        <div class="glass-card">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
@@ -784,6 +798,14 @@
           </div>
           <div class="feature-text">
             <strong>Group Collaboration:</strong> Securely shares expense records only with members you explicitly invite to your private trips.
+          </div>
+        </li>
+        <li class="feature-item">
+          <div class="feature-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="feature-text">
+            <strong>GPS Route Tracking:</strong> Utilizes device location only when an active trip is ongoing to accurately calculate and distribute distance-based travel costs among members.
           </div>
         </li>
         <li class="feature-item">
@@ -863,6 +885,16 @@
         <div>
           <h3>Formspree Relay</h3>
           <p>Securely processes voluntary suggestions and ratings submitted through the in-app feedback dialog without tracking cookies.</p>
+        </div>
+      </div>
+      
+      <div class="glass-card partner-card">
+        <div class="partner-logo gps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h3>Location Data Security (GPS)</h3>
+          <p>Your GPS data is encrypted both in transit and at rest. Location history is strictly bound to your active trips. If you delete a trip or request account erasure, all associated location data is immediately and permanently destroyed. We do not monetize or share movement data with third parties.</p>
         </div>
       </div>
     </section>
