@@ -21,9 +21,10 @@
       --accent-green: #10b981;
       --accent-sky: #38bdf8;
       --text-white: #ffffff;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --text-main: #ffffff;
+      --text-body: #e2e8f0;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
       --sidebar-width: 280px;
       --header-height: 64px;
       --radius-sm: 8px;
@@ -387,10 +388,10 @@
     }
 
     .hero-sub {
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
-      color: var(--text-muted);
+      font-size: clamp(0.98rem, 2vw, 1.08rem);
+      color: #cbd5e1;
       max-width: 660px;
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 24px;
     }
 
@@ -404,12 +405,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 30px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.82rem;
+      color: #e2e8f0;
       font-weight: 600;
     }
 
@@ -456,10 +457,10 @@
     }
 
     .section-lead {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 22px;
-      line-height: 1.55;
+      color: #cbd5e1;
+      font-size: 1.02rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
       max-width: 780px;
     }
 
@@ -496,44 +497,52 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 22px;
+      padding: 0;
+      margin: 0;
     }
 
     .point-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .point-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .point-text strong {
       display: block;
-      color: #ffffff;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 3px;
+      position: relative;
+    }
+
+    .point-title,
+    .point-text > strong:first-child {
+      display: inline-block;
+      color: #c084fc;
+      background: linear-gradient(135deg, #f3e8ff 0%, #c084fc 55%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
     }
 
     .point-text p {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .point-text p strong {
+      display: inline !important;
+      color: #ffffff;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .point-text p em {
+      display: inline !important;
+      font-style: italic;
+    }
+
+    .point-text p code {
+      display: inline !important;
     }
 
     /* Micro Highlights */
@@ -616,9 +625,9 @@
     }
 
     .mockup-subtext {
-      font-size: 0.74rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: var(--text-dim);
+      color: #cbd5e1;
       margin-top: 10px;
       text-align: center;
       display: flex;
@@ -640,8 +649,8 @@
 
     .tab-pills {
       display: inline-flex;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 4px;
       border-radius: 12px;
       gap: 4px;
@@ -652,13 +661,17 @@
       border-radius: 8px;
       background: transparent;
       border: none;
-      color: var(--text-muted);
+      color: #cbd5e1;
       font-family: var(--font);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
+    }
+
+    .tab-pill-btn:hover {
+      color: #ffffff;
     }
 
     .tab-pill-btn.active {
@@ -743,91 +756,6 @@
       background: #f1f5f9;
       transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2);
-    }
-
-    /* Privacy Policy Card & Action Button */
-    .privacy-action-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(15, 23, 42, 0.6) 100%);
-      border: 1.5px solid rgba(6, 182, 212, 0.28);
-      border-radius: var(--radius-md);
-      padding: clamp(18px, 3vw, 24px);
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-
-    .privacy-meta-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .privacy-symbol-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #06b6d4, #0284c7);
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
-    }
-
-    .privacy-card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 2px;
-    }
-
-    .privacy-card-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .btn-privacy-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 22px;
-      background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
-      color: #ffffff !important;
-      text-decoration: none !important;
-      font-weight: 700;
-      font-size: 0.88rem;
-      border-radius: 12px;
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-      min-height: 44px;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .btn-privacy-link:hover {
-      background: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(6, 182, 212, 0.5), 0 0 16px rgba(34, 211, 238, 0.35);
-      border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .btn-privacy-link:active {
-      transform: translateY(0) scale(0.98);
-      box-shadow: 0 2px 10px rgba(6, 182, 212, 0.3);
-    }
-
-    .btn-privacy-link svg {
-      transition: transform 0.2s ease;
-    }
-
-    .btn-privacy-link:hover svg {
-      transform: translate(2.5px, -2.5px);
     }
 
     /* Lightbox Modal */
@@ -1138,19 +1066,16 @@
       .dual-mockups-grid {
         grid-template-columns: 1fr;
       }
-      .pdf-download-card,
-      .privacy-action-card {
+      .pdf-download-card {
         flex-direction: column;
         align-items: stretch;
         text-align: center;
       }
-      .pdf-meta-left,
-      .privacy-meta-left {
+      .pdf-meta-left {
         flex-direction: column;
         text-align: center;
       }
-      .btn-pdf-link,
-      .btn-privacy-link {
+      .btn-pdf-link {
         width: 100%;
       }
       .footer-top-row {
@@ -1181,7 +1106,7 @@
         padding: 20px 16px;
       }
       .panel-card {
-        padding: 16px 14px;
+        padding: 22px 18px;
       }
       .smartphone-chassis {
         max-width: 265px;
@@ -1329,24 +1254,21 @@
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Total Balance & Net Standing Banner</strong>
-                    <p>Displays your combined trip balance (e.g. <strong>₹4,797.00</strong>) divided into real-time <strong>PAYABLE</strong> (e.g. <em>₹258.67</em> with red up-arrow) and <strong>RECEIVABLE</strong> (e.g. <em>₹0.00</em> with green down-arrow) summaries.</p>
+                    <strong class="point-title">Real-Time Net Balance Overview</strong>
+                    <p>Instantly see your overall standing across all journeys. Your balance clearly separates <strong>Payable</strong> (money you owe to others) from <strong>Receivable</strong> (money others owe you), keeping your personal finances transparent.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Active Trip Cards & Live Activity</strong>
-                    <p>Cards highlight the trip name (e.g. <strong>Netravati</strong>), total expenditure (<strong>₹4,797</strong>), participant avatars, and an activity ticker showing recent actions like <em>"New expense in a trip: ₹800.00 • 9 Sept"</em>.</p>
+                    <strong class="point-title">Active Trip Workspaces & Live Ticker</strong>
+                    <p>Each card represents an ongoing or past trip, showing total group spending, participant avatars, and an activity ticker that updates immediately whenever a new expense or settlement occurs.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">3</span>
                   <div class="point-text">
-                    <strong>Quick Action Dock</strong>
-                    <p>Bottom navigation bar provides one-tap access to <strong>Trips</strong>, <strong>Route Map (📍)</strong>, <strong>Trip Chat (💬)</strong>, <strong>Trash / Archive (🗑️)</strong>, <strong>Members (👥)</strong>, and the floating <strong>➕</strong> button to create or join trips.</p>
+                    <strong class="point-title">Quick Action Dock</strong>
+                    <p>The bottom navigation bar gives you one-tap shortcuts to your trips list, travel route map, in-trip group chat, member roster, archive, and the floating button to create or join a trip.</p>
                   </div>
                 </li>
               </ul>
@@ -1356,7 +1278,7 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/01-home-dashboard.png" alt="Home Dashboard" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 1.1</span> Main Home Dashboard with Net Balance & Quick Dock</div>
+              <div class="mockup-subtext"><span>Fig 1.1</span> Main Home Dashboard Overview</div>
             </div>
           </div>
         </div>
@@ -1377,35 +1299,32 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/02-create-trip.png" alt="Create Trip" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 2.1</span> Create New Trip Modal with Themes & Digital Pot</div>
+              <div class="mockup-subtext"><span>Fig 2.1</span> Create New Trip Modal</div>
             </div>
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Title, Icons & Card Material Swatches</strong>
-                    <p>Enter your <strong>Trip Title</strong> (e.g. <em>"Goa Trip"</em>), select from 8 travel icons (Flight ✈️, Car 🚗, Scooter 🛵, Beach 🏖️, Mountain ⛰️, Camping 🏕️, Monument 🏛️, Cruise 🛳️), and choose from 8 gradient <strong>Card Material</strong> swatches (Purple, Navy, Emerald, Coral, Sky Blue, Teal, Violet, Slate).</p>
+                    <strong class="point-title">Personalized Themes & Travel Icons</strong>
+                    <p>Give your trip a custom identity. Choose from diverse travel icons (flights, road trips, mountains, beaches) and select vibrant gradient materials to style your trip card.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Date Pickers & Budget Target</strong>
-                    <p>Set optional <strong>Start Date</strong> and <strong>End Date</strong> ranges, along with an optional <strong>Trip Budget</strong> target (e.g. <em>₹50,000</em>) to track team spending thresholds.</p>
+                    <strong class="point-title">Flexible Dates & Budget Tracking</strong>
+                    <p>Set optional start and end dates to keep expenses organized chronologically. Define a trip budget target to help your group stay on track with spending goals.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">3</span>
                   <div class="point-text">
-                    <strong>Instant Members (Min 2, Max 10) & Digital Pot Toggle</strong>
-                    <p>Type member names directly without phone numbers or passwords. Check <strong>"Enable Digital Pot (Prepaid Fund)"</strong> if your group wants an upfront pooled kitty balance.</p>
+                    <strong class="point-title">Instant Member Entry & Digital Pot</strong>
+                    <p>Add friends simply by typing their names—no phone numbers, passwords, or invitations needed. Toggle on the Digital Pot if your group prefers pooling money upfront.</p>
                   </div>
                 </li>
               </ul>
               <div class="callout-pill green">
                 <span>🛡️</span>
-                <div><strong>Zero Signups Required:</strong> Add up to 10 friends instantly. No logins, accounts, or invitations required to start calculating.</div>
+                <div><strong>Zero Signups Required:</strong> Friends are added immediately without any onboarding friction.</div>
               </div>
             </div>
           </div>
@@ -1418,31 +1337,28 @@
           <div class="section-counter">03</div>
           <h2 class="section-title-text">Smart Expense Splitting</h2>
         </div>
-        <p class="section-lead">Log bills with automated categorization, custom payers, exclusion controls, and an interactive day picker.</p>
+        <p class="section-lead">Record bills effortlessly with intelligent categorization, flexible payer assignments, and exclusion controls.</p>
 
         <div class="panel-card">
           <div class="panel-grid">
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Description, Amount & Category</strong>
-                    <p>Type <strong>"What was it for?"</strong> (e.g. <em>Petrol, Dinner, Entry Tickets</em>), input the <strong>Amount (₹)</strong>, and choose a category from the dropdown (such as <strong>Food</strong>, Travel, Stay, or Activities).</p>
+                    <strong class="point-title">Quick Bill Logging & Categories</strong>
+                    <p>Enter the bill description, amount, and category (Food, Travel, Stay, Activities). Categories automatically power your visual spending analytics and summary reports.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Paid By & Split Exclusions</strong>
-                    <p>Select who paid from the <strong>"Paid By"</strong> dropdown (e.g. <em>Adarsh Patil</em>). Use the <strong>"Exclude someone"</strong> dropdown to split equally among everyone or selectively exclude non-participating members.</p>
+                    <strong class="point-title">Custom Payers & Selective Exclusions</strong>
+                    <p>Assign who fronted the money—an individual member or the shared Digital Pot. Use the exclusion filter to easily omit members who did not participate in a specific meal or activity.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">3</span>
                   <div class="point-text">
-                    <strong>Horizontal Date Strip & Notes</strong>
-                    <p>Quickly tap the exact date on the interactive calendar strip (e.g. <strong>MON 7</strong>, <strong>TUE 8</strong>, <strong>WED 9</strong> active cyan pill, <strong>THU 10</strong>, <strong>FRI 11</strong>) and add optional notes before hitting <strong>"Save Expense"</strong>.</p>
+                    <strong class="point-title">Interactive Day Strip & Notes</strong>
+                    <p>Tap through the horizontal calendar strip to assign expenses to specific trip days, and add notes to record invoice details, receipt notes, or vendor info.</p>
                   </div>
                 </li>
               </ul>
@@ -1452,7 +1368,7 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/03-add-expense.png" alt="Add Expense" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 3.1</span> Add Expense Modal with Date Strip & Split Options</div>
+              <div class="mockup-subtext"><span>Fig 3.1</span> Add Expense Screen</div>
             </div>
           </div>
         </div>
@@ -1464,7 +1380,7 @@
           <div class="section-counter">04</div>
           <h2 class="section-title-text">Balances & Simplified Debts</h2>
         </div>
-        <p class="section-lead">Eliminate confusing round-robin debts. View direct settlement cards and the individual contribution ledger.</p>
+        <p class="section-lead">Eliminate confusing round-robin debts. View direct settlement paths and the itemized member ledger.</p>
 
         <div class="panel-card">
           <div class="panel-grid reverse">
@@ -1473,31 +1389,26 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/04-balances.png" alt="Balances Sheet" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 4.1</span> Who Owes Whom & Individual Contribution Table</div>
+              <div class="mockup-subtext"><span>Fig 4.1</span> Net Balances & Debt Sheet</div>
             </div>
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>"Who Owes Whom" Smart Settlements</strong>
-                    <p>Debt minimization cards show direct settlement paths with bright green direction arrows: <strong>Adarsh Patil ➔ Vishal Patil: ₹100.00</strong> and <strong>Adarsh Patil ➔ Chaitra Naik: ₹10.00</strong>.</p>
+                    <strong class="point-title">"Who Owes Whom" Smart Settlements</strong>
+                    <p>Our debt simplification algorithm mathematically minimizes crisscrossed debts into the smallest possible number of direct transfers, saving everyone from endless back-and-forth payments.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>"Individual Contribution" Financial Table</strong>
-                    <p>A transparent 3-column ledger (<strong>Name</strong> | <strong>Paid</strong> | <strong>Difference</strong>):<br>
-                    • <strong>Adarsh Patil</strong>: Paid <em>₹0.00</em>, Difference <span style="color:var(--danger);font-weight:600;">-₹110.00</span><br>
-                    • <strong>Vishal Patil</strong>: Paid <em>₹210.00</em>, Difference <span style="color:var(--success);font-weight:600;">+₹100.00</span><br>
-                    • <strong>Chaitra Naik</strong>: Paid <em>₹120.00</em>, Difference <span style="color:var(--success);font-weight:600;">+₹10.00</span></p>
+                    <strong class="point-title">Individual Contribution Ledger</strong>
+                    <p>A transparent breakdown detailing what each person spent versus their fair share. Positive balances highlight members who are owed money, while negative balances show amounts to be settled.</p>
                   </div>
                 </li>
               </ul>
               <div class="callout-pill">
                 <span>⚡</span>
-                <div><strong>Mathematically Optimal:</strong> Collapses multiple overlapping group expenses into just 2 minimal direct payments.</div>
+                <div><strong>Mathematically Optimal:</strong> Collapses dozens of chaotic group expenses into minimal direct payments.</div>
               </div>
             </div>
           </div>
@@ -1510,14 +1421,14 @@
           <div class="section-counter">05</div>
           <h2 class="section-title-text">Settle Up (Pay Now & Paid Status)</h2>
         </div>
-        <p class="section-lead">One-tap UPI deep linking, automatic payment requests, and dual-party confirmation tracking.</p>
+        <p class="section-lead">One-tap UPI payments, automatic payment requests, and dual-party confirmation tracking.</p>
 
         <div class="panel-card">
           <!-- Segmented Tab Header -->
           <div class="tab-nav-wrapper">
             <div class="tab-pills">
-              <button class="tab-pill-btn active" onclick="switchTab('settle', 'paynow', this)">Pay Now (2)</button>
-              <button class="tab-pill-btn" onclick="switchTab('settle', 'paidstatus', this)">Paid Status (1)</button>
+              <button class="tab-pill-btn active" onclick="switchTab('settle', 'paynow', this)">Pay Now Tab</button>
+              <button class="tab-pill-btn" onclick="switchTab('settle', 'paidstatus', this)">Paid Status Tab</button>
             </div>
           </div>
 
@@ -1528,9 +1439,9 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/05-settle-up-01.png" alt="Pay Now Tab" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 5.1</span> Pay Now: Instant UPI Launch & Card Options</div>
-              <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 8px; max-width: 280px;">
-                Each recipient displays their UPI ID (e.g. <code style="color:var(--accent);font-size:0.75rem;">⚡ Vishal-DemoUPI@ybl</code>) with <strong>PAYABLE AMOUNT (₹100.00)</strong>, with <strong>⚡ Pay Now</strong> and <strong>✔ Mark as Paid</strong> buttons.
+              <div class="mockup-subtext"><span>Fig 5.1</span> Pay Now: Instant UPI Launch</div>
+              <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
+                Tap <strong>Pay Now</strong> to launch Google Pay, PhonePe, or Paytm with the receiver's UPI ID and amount pre-filled, or tap <strong>Mark as Paid</strong>.
               </p>
             </div>
 
@@ -1540,9 +1451,9 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/05-settle-up-02.png" alt="Paid Status Tab" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 5.2</span> Paid Status: Confirmation & Verified Badges</div>
-              <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 8px; max-width: 280px;">
-                Shows <strong>⏳ AWAITING CONFIRMATION</strong> with <em>🔔 Remind Vishal</em> button, and <strong>✔ VERIFIED SETTLEMENTS</strong> (Adarsh Patil ➔ Chaitra Naik: ₹10.00 • Verified).
+              <div class="mockup-subtext"><span>Fig 5.2</span> Paid Status: Verification & History</div>
+              <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
+                Track pending confirmations, send gentle reminder nudges, and view permanent verified settlement receipts.
               </p>
             </div>
           </div>
@@ -1562,21 +1473,15 @@
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Time-Stamped Activity Feed</strong>
-                    <p>Under the <strong>History</strong> tab, events are organized by date (e.g. <strong>TODAY</strong>) with member avatars and precise timestamps:<br>
-                    • <em>12:59 PM</em>: <strong>Adarsh Patil</strong> added ₹3,000.00 to the Digital Pot.<br>
-                    • <em>12:59 PM</em>: <strong>Chaitra Naik</strong> added ₹120.00 for <em>'Drinks / Tea'</em>.<br>
-                    • <em>12:58 PM</em>: <strong>Vishal Patil</strong> added ₹210.00 for <em>'Lunch'</em>.<br>
-                    • <em>12:57 PM</em>: <strong>Adarsh Patil</strong> created the trip.</p>
+                    <strong class="point-title">Real-Time Activity Feed</strong>
+                    <p>Every logged bill, pot deposit, and settlement is recorded in a clean chronological stream with member avatars and timestamps so you always know what changed and when.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Audit Trail Transparency</strong>
-                    <p>Ensures zero ambiguity—every member can independently check when an expense was logged or when a payment was submitted.</p>
+                    <strong class="point-title">Audit Transparency & Accountability</strong>
+                    <p>Provides a permanent record of past actions, preventing misunderstandings and ensuring total team trust throughout the journey.</p>
                   </div>
                 </li>
               </ul>
@@ -1586,7 +1491,7 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/06-history.png" alt="Activity History" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 6.1</span> Trip Activity Stream & Contribution Timeline</div>
+              <div class="mockup-subtext"><span>Fig 6.1</span> Trip Activity Timeline</div>
             </div>
           </div>
         </div>
@@ -1607,25 +1512,20 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/07-analytics.png" alt="Analytics Charts" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 7.1</span> Analytics Dashboard: KPI Cards & Category Proportions</div>
+              <div class="mockup-subtext"><span>Fig 7.1</span> Visual Spending Breakdown</div>
             </div>
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Key Metric Tiles (KPI Cards)</strong>
-                    <p>Spotlight tiles at the top highlight:<br>
-                    • 👑 <strong>Top Spender</strong>: Adarsh Patil (<em>₹420.00</em>)<br>
-                    • 🍔 <strong>Top Category</strong>: Travel (<em>₹420.00</em>)<br>
-                    • 💸 <strong>Largest Item</strong>: Taxi / Cab / Uber (<em>₹420.00</em>)</p>
+                    <strong class="point-title">Key Insight Cards</strong>
+                    <p>Spotlight tiles highlight the trip's <strong>Top Spender</strong>, highest expenditure <strong>Category</strong>, and the single <strong>Largest Expense</strong> logged so far.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Proportional Bar & Category Breakdown</strong>
-                    <p>A dual-tone horizontal proportion bar displays spending distribution (<strong>🔵 Travel 56%</strong> | <strong>🟣 Food 44%</strong>). Below, expandable category cards break down who paid for what (Food ₹330: Vishal ₹210, Chaitra ₹120; Travel ₹420: Adarsh ₹420).</p>
+                    <strong class="point-title">Category Proportions & Member Details</strong>
+                    <p>A sleek segmented proportion bar illustrates spending distribution across categories, backed by expandable cards detailing each member's contributions.</p>
                   </div>
                 </li>
               </ul>
@@ -1647,30 +1547,27 @@
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Live Pot Balance & Top-Up Meter</strong>
-                    <p>Displays total pooled funds (e.g. <strong>₹3,500.00</strong>) alongside a real-time status strip: <strong>Funded: ₹3,500.00</strong> | <strong>Spent: ₹0.00</strong>. Tap <strong>+ Top Up Pot</strong> anytime to add more funds.</p>
+                    <strong class="point-title">Shared Group Kitty & Live Meter</strong>
+                    <p>Collect equal upfront funds into a digital pot before traveling. Monitor total funded amounts versus spent balances in real time, and top up whenever needed.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Smart "Pot Equalization" Engine</strong>
-                    <p>When members contribute unequal deposits, the <strong>POT EQUALIZATION</strong> card calculates exact balance-leveling transfers (e.g. <em>Adarsh Patil ➔ Chaitra Naik: ₹166.67</em> and <em>Vishal Patil ➔ Chaitra Naik: ₹166.67</em>) so everyone's net contribution is 100% equal.</p>
+                    <strong class="point-title">Smart Pot Equalization Engine</strong>
+                    <p>If members deposit unequal amounts into the pot, the built-in Equalization calculator automatically determines the exact leveling transfers to keep everyone's contribution fair.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">3</span>
                   <div class="point-text">
-                    <strong>Zero-Friction Group Bills</strong>
-                    <p>When paying for fuel, tolls, or snacks, simply pick "Digital Pot" as the payer—eliminating messy per-person split arithmetic on the road.</p>
+                    <strong class="point-title">Frictionless Communal Spending</strong>
+                    <p>Pay for fuel, tolls, snacks, and shared meals directly from the Pot without calculating per-person micro-splits on the go.</p>
                   </div>
                 </li>
               </ul>
               <div class="callout-pill green">
                 <span>🍯</span>
-                <div><strong>Group Favorite:</strong> Cuts out 80% of tiny individual transaction friction during road trips.</div>
+                <div><strong>Traveler Favorite:</strong> Eliminates 80% of small payment friction during road trips and group vacations.</div>
               </div>
             </div>
             <div class="mockup-wrapper">
@@ -1678,7 +1575,7 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/08-digital-pot.png" alt="Digital Pot" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 8.1</span> Digital Pot Balance, Funding Status & Equalization</div>
+              <div class="mockup-subtext"><span>Fig 8.1</span> Digital Pot Kitty View</div>
             </div>
           </div>
         </div>
@@ -1699,34 +1596,26 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/09-map-route.png" alt="Map Route" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 9.1</span> Road Itinerary Map: Distance, Stops & Route Timeline</div>
+              <div class="mockup-subtext"><span>Fig 9.1</span> Map Itinerary & Route Corridor</div>
             </div>
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Route Overview & Key Driving Metrics</strong>
-                    <p>The top route bar summarizes trip scope at a glance: <strong>3 TOTAL STOPS</strong> | <strong>421.5 km TOTAL DISTANCE</strong> | <strong>5h 56m EST. TIME</strong>.</p>
+                    <strong class="point-title">Driving Distance & Time Estimates</strong>
+                    <p>The top route overview displays total planned stops, total driving distance, and estimated travel duration across your journey.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Numbered Checkpoint Timeline</strong>
-                    <p>Color-coded waypoint cards chart the entire corridor:<br>
-                    • <strong>1 (Green) Bengaluru</strong> (Start Point)<br>
-                    • <strong>2 (Purple) Hassan</strong> (Stop • 191.9 km, 2h 37m)<br>
-                    • <strong>3 (Purple) Sakleshpur</strong> (Stop • 49.9 km, 40m)<br>
-                    • <strong>4 (Purple) Kalasa</strong> (Stop • 93.0 km, 1h 21m)<br>
-                    • <strong>5 (Red) Netravati</strong> (End Point • 86.7 km, 1h 16m)</p>
+                    <strong class="point-title">Numbered Checkpoint Timeline</strong>
+                    <p>Color-coded waypoints map your complete travel route from departure to final destination, showing distances and driving times between each stop.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">3</span>
                   <div class="point-text">
-                    <strong>Route Tools & Controls</strong>
-                    <p>Action buttons let you <strong>Edit Route</strong> to reorder waypoints, toggle <strong>Return Route</strong> for round trips, or hit <strong>Start</strong> to begin real-time navigation.</p>
+                    <strong class="point-title">Route Controls & Navigation</strong>
+                    <p>Easily edit stops, toggle return routes for round trips, or launch active navigation in your preferred maps application.</p>
                   </div>
                 </li>
               </ul>
@@ -1748,24 +1637,21 @@
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Pinned Cloud Drive Folder</strong>
-                    <p>A pinned top banner displays shared cloud resources—such as <strong>📁 Google Drive Folder</strong> (shared by Vishal Patil) with a <strong>View ↗</strong> button for photos, itineraries, and receipts.</p>
+                    <strong class="point-title">Pinned Cloud Drive Folders</strong>
+                    <p>Pin essential group assets—such as shared Google Drive folders for trip photos, tickets, and bookings—directly to the top of the chat for instant access.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>Location Link & Message Stream</strong>
-                    <p>Group members can chat in real-time and post clickable Google Maps pins (e.g. <code>maps.app.goo.gl/...</code>) without cluttering personal messenger apps.</p>
+                    <strong class="point-title">Location Pins & Group Messaging</strong>
+                    <p>Share clickable Google Maps location pins, packing checklists, and announcements without cluttering personal messaging apps.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">3</span>
                   <div class="point-text">
-                    <strong>Trip-Scoped Hub</strong>
-                    <p>Directly tied to the active trip workspace (<em>Netravati • Chat with 4 members</em>), keeping all discussions contextually organized.</p>
+                    <strong class="point-title">Context-Locked Discussions</strong>
+                    <p>Every message and link stays attached to the specific trip, making it effortless to retrieve past memories and recommendations.</p>
                   </div>
                 </li>
               </ul>
@@ -1775,7 +1661,7 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/10-trip-chat.png" alt="Trip Chat" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 10.1</span> In-Trip Chat with Pinned Google Drive & Map Pins</div>
+              <div class="mockup-subtext"><span>Fig 10.1</span> In-Trip Chat & Pinned Resources</div>
             </div>
           </div>
         </div>
@@ -1805,9 +1691,9 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/11-share-trip-01.png" alt="Host Share Trip" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 11.1</span> Host View: 4-Digit Code 'GZ53' & Member List</div>
-              <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 8px; max-width: 280px;">
-                Toggle between <strong>By Adding Mail</strong> or <strong>By Code</strong>. Generates a 4-character code (<strong>GZ53</strong>), a <strong>Share Code</strong> button, and an active member list with emails (<em>vishallaptop78p@gmail.com</em>).
+              <div class="mockup-subtext"><span>Fig 11.1</span> Host View: Share via Code or Email</div>
+              <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
+                Generate an easy 4-character code to share via WhatsApp, or send direct email invitations to participants.
               </p>
             </div>
 
@@ -1817,9 +1703,9 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/11-share-trip-02.png" alt="Guest Join Trip" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 11.2</span> Guest View: Enter 4-Digit Code to Join</div>
-              <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 8px; max-width: 280px;">
-                Guests tap <strong>Join a Trip</strong> on their dashboard, enter the 4-digit code (e.g. <code>GZ53</code>), and tap <strong>Join Trip</strong> to instantly sync the full ledger.
+              <div class="mockup-subtext"><span>Fig 11.2</span> Guest View: Enter Code to Join</div>
+              <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
+                Guests simply tap "Join a Trip", type the 4-digit code, and instantly sync the complete shared ledger.
               </p>
             </div>
           </div>
@@ -1832,24 +1718,22 @@
           <div class="section-counter">12</div>
           <h2 class="section-title-text">App Lock & Local Privacy</h2>
         </div>
-        <p class="section-lead">Local PIN security keeping your private financial records and balances protected on-device.</p>
+        <p class="section-lead">Bank-grade security keeping your personal financial records and balances protected on-device.</p>
 
         <div class="panel-card">
           <div class="panel-grid">
             <div>
               <ul class="keypoints">
                 <li class="point-item">
-                  <span class="point-icon">1</span>
                   <div class="point-text">
-                    <strong>Custom 4-Digit PIN Dialpad</strong>
-                    <p>The <strong>"Set Your PIN"</strong> screen features a dedicated dark numeric keypad (digits 1-9, 0, and clear/backspace ⌫) and 4 security dot indicators (<code>○ ○ ○ ○</code>) to guard app access.</p>
+                    <strong class="point-title">Custom 4-Digit PIN Security</strong>
+                    <p>Lock your app behind a custom 4-digit PIN using an intuitive dark touch dialpad, safeguarding sensitive balance sheets from curious eyes.</p>
                   </div>
                 </li>
                 <li class="point-item">
-                  <span class="point-icon">2</span>
                   <div class="point-text">
-                    <strong>100% Offline Local Sovereignty</strong>
-                    <p>Your balances, settlement history, and trip notes are stored locally on your device in secure storage—ensuring complete privacy with zero external tracking.</p>
+                    <strong class="point-title">100% Offline Local Sovereignty</strong>
+                    <p>All expense calculations, balances, and chat notes are stored strictly on your local device—ensuring complete privacy with zero external tracking.</p>
                   </div>
                 </li>
               </ul>
@@ -1859,31 +1743,8 @@
                 <div class="smartphone-notch"></div>
                 <img src="./assets/12-app-lock.png" alt="App Lock" class="smartphone-screen" loading="lazy">
               </div>
-              <div class="mockup-subtext"><span>Fig 12.1</span> Set Your 4-Digit PIN Security Screen</div>
+              <div class="mockup-subtext"><span>Fig 12.1</span> PIN Security Screen</div>
             </div>
-          </div>
-
-          <!-- Official Privacy Policy Feature Action Card -->
-          <div class="privacy-action-card">
-            <div class="privacy-meta-left">
-              <div class="privacy-symbol-badge">
-                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <div>
-                <div class="privacy-card-title">Official Privacy Policy</div>
-                <div class="privacy-card-desc">Zero telemetry, local device storage, and complete offline data privacy commitment.</div>
-              </div>
-            </div>
-            <a href="https://adarsh-patil-07.github.io/PaySplitter/privacy-policy.html" target="_blank" rel="noopener noreferrer" class="btn-privacy-link">
-              <span>View Privacy Policy</span>
-              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
           </div>
         </div>
       </section>
@@ -1899,17 +1760,15 @@
         <div class="panel-card">
           <ul class="keypoints">
             <li class="point-item">
-              <span class="point-icon">1</span>
               <div class="point-text">
-                <strong>Multi-Page Printable PDF Statement</strong>
-                <p>Generates an official document featuring the trip header, date ranges, total expenditures, category breakdown, individual member contributions, and net settlement transactions complete with recipient UPI ID handles.</p>
+                <strong class="point-title">Multi-Page Printable PDF Statements</strong>
+                <p>Generate clean, beautifully formatted trip summaries with complete expense ledgers, visual category breakdowns, and simplified settlement transfers with payee UPI details.</p>
               </div>
             </li>
             <li class="point-item">
-              <span class="point-icon">2</span>
               <div class="point-text">
-                <strong>Offline JSON Backups</strong>
-                <p>Download your complete unencrypted trip dataset in standard JSON format to archive offline or easily import onto another smartphone or browser.</p>
+                <strong class="point-title">Offline JSON Backups</strong>
+                <p>Download portable backup files to archive your full trip history offline or easily migrate your data when switching phones.</p>
               </div>
             </li>
           </ul>
