@@ -179,6 +179,32 @@
 
     .btn-open-app:active { transform: scale(0.96); }
 
+    .btn-guide {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(99, 102, 241, 0.2));
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      color: #ffffff !important;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      padding: 7px 14px !important;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(168, 85, 247, 0.25);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+
+    .btn-guide:hover {
+      background: linear-gradient(135deg, #a855f7, #6366f1);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(168, 85, 247, 0.55);
+      border-color: rgba(168, 85, 247, 0.7);
+    }
+
+    .btn-guide:active { transform: scale(0.96); }
+
     /* Hero Header */
     header.hero {
       text-align: center;
@@ -676,13 +702,66 @@
       font-size: 0.84rem;
     }
 
+    .footer-guide-box {
+      margin-bottom: 32px;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(56, 189, 248, 0.06) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.28);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .footer-guide-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 520px;
+      line-height: 1.55;
+    }
+
+    .footer-guide-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+      color: #ffffff !important;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 11px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(168, 85, 247, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .footer-guide-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(168, 85, 247, 0.55);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-guide-btn:active {
+      transform: scale(0.97);
+    }
+
     footer p:first-child { margin-bottom: 6px; color: var(--text-muted); }
 
     /* Responsive Queries */
     @media (max-width: 640px) {
       .grid-2 { grid-template-columns: 1fr; }
-      .nav-links a:not(.btn-open-app) { display: none; }
-      .top-nav { padding: 6px 12px; }
+      .nav-links a.nav-link { display: none; }
+      .top-nav { padding: 6px 12px; gap: 6px; }
+      .nav-brand { font-size: 0.9rem; gap: 8px; }
+      .btn-guide, .btn-open-app {
+        font-size: 0.72rem !important;
+        padding: 6px 10px !important;
+        gap: 4px !important;
+      }
       .email-action-row { flex-direction: column; width: 100%; }
       .email-btn, .copy-btn { width: 100%; }
     }
@@ -716,6 +795,11 @@
         <a href="#rights" class="nav-link">Rights</a>
         <a href="#third-party" class="nav-link">Security</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://adarsh-patil-07.github.io/PaySplitter/guide/guide.html" target="_blank" rel="noopener noreferrer" class="btn-guide">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          <span>Guide</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+        </a>
         <a href="https://paysplitter-ai.netlify.app/" class="btn-open-app">Open App ↗</a>
       </div>
     </nav>
@@ -1005,6 +1089,14 @@
 
     <!-- Footer -->
     <footer>
+      <div class="footer-guide-box">
+        <div class="footer-guide-text">Looking for step-by-step tutorials, offline guides, or debt settlement walkthroughs?</div>
+        <a href="https://adarsh-patil-07.github.io/PaySplitter/guide/guide.html" target="_blank" rel="noopener noreferrer" class="footer-guide-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          <span>Explore User Guide</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+        </a>
+      </div>
       <p>Made with ❤️ by <strong>Adarsh Patil</strong></p>
       <p>Copyright &copy; 2026 PaySplitter. All Rights Reserved.</p>
     </footer>
