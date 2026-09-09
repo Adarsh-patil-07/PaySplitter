@@ -58,39 +58,77 @@
     }
 
     /* ==========================================================================
-       ULTRA-PREMIUM CUSTOM SCROLLBARS (ZERO WHITE WINDOWS BARS)
+       ULTRA-PREMIUM SLENDER FLOATING SCROLLBARS (ZERO CLUNKY ARROWS)
        ========================================================================== */
-    html {
+    html, body {
       scrollbar-width: thin;
-      scrollbar-color: rgba(255, 255, 255, 0.16) #06080d;
+      scrollbar-color: rgba(168, 85, 247, 0.45) transparent;
     }
 
     ::-webkit-scrollbar {
-      width: 7px;
-      height: 7px;
+      width: 4px;
+      height: 4px;
     }
+
+    ::-webkit-scrollbar-button {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
     ::-webkit-scrollbar-track {
-      background: #06080d;
+      background: transparent;
+      margin: 4px 0;
     }
+
+    ::-webkit-scrollbar-track-piece {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
     ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.14);
+      background: linear-gradient(180deg, rgba(168, 85, 247, 0.4) 0%, rgba(99, 102, 241, 0.4) 100%);
       border-radius: 999px;
-      transition: background 0.2s ease;
+      transition: all 0.25s ease;
     }
+
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(168, 85, 247, 0.65);
+      background: linear-gradient(180deg, #c084fc 0%, #818cf8 100%);
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+      background: #a855f7;
+    }
+
+    .sidebar {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
     }
 
     .sidebar::-webkit-scrollbar {
-      width: 5px;
+      width: 3px;
     }
+
+    .sidebar::-webkit-scrollbar-button {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
     .sidebar::-webkit-scrollbar-track {
       background: transparent;
     }
+
     .sidebar::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 999px;
+      transition: background 0.2s ease;
     }
+
     .sidebar::-webkit-scrollbar-thumb:hover {
       background: var(--primary-light);
     }
@@ -138,13 +176,18 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 14px rgba(168, 85, 247, 0.25);
+      border: 1.5px solid rgba(168, 85, 247, 0.35);
+      padding: 0;
+      background: transparent;
+      flex-shrink: 0;
     }
 
     .brand-mark img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
+      border-radius: 8px;
     }
 
     .brand-meta {
@@ -341,44 +384,46 @@
     .content-area {
       flex: 1;
       min-width: 0;
-      padding: 40px clamp(16px, 4vw, 56px) 100px;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px clamp(16px, 3.5vw, 44px) 80px;
     }
 
     /* Hero Banner */
     .hero-box {
       background: linear-gradient(135deg, rgba(24, 18, 48, 0.6) 0%, rgba(10, 14, 24, 0.85) 100%);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: clamp(28px, 4vw, 44px);
-      margin-bottom: 56px;
+      border-radius: 18px;
+      padding: clamp(20px, 3vw, 30px);
+      margin-bottom: 38px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
 
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 11px;
+      padding: 4px 10px;
       border-radius: 20px;
       background: rgba(168, 85, 247, 0.12);
       border: 1px solid rgba(168, 85, 247, 0.28);
       color: var(--primary-light);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .hero-heading {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.2;
       color: #ffffff;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .hero-heading span {
@@ -388,60 +433,60 @@
     }
 
     .hero-sub {
-      font-size: clamp(0.98rem, 2vw, 1.08rem);
+      font-size: clamp(0.9rem, 1.6vw, 0.98rem);
       color: #cbd5e1;
-      max-width: 660px;
-      line-height: 1.65;
-      margin-bottom: 24px;
+      max-width: 620px;
+      line-height: 1.55;
+      margin-bottom: 18px;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 7px;
     }
 
     .feature-tag {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
+      gap: 5px;
+      padding: 5px 12px;
       border-radius: 30px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: #e2e8f0;
       font-weight: 600;
     }
 
     .feature-tag svg {
       color: var(--primary-light);
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
     }
 
     /* Section Component */
     .guide-card-section {
-      margin-bottom: clamp(48px, 6vw, 72px);
-      scroll-margin-top: calc(var(--header-height) + 24px);
+      margin-bottom: clamp(34px, 4vw, 48px);
+      scroll-margin-top: calc(var(--header-height) + 20px);
     }
 
     .section-headline {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 6px;
     }
 
     .section-counter {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
       background: rgba(168, 85, 247, 0.12);
       border: 1px solid rgba(168, 85, 247, 0.25);
       color: var(--primary-light);
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -450,7 +495,7 @@
     }
 
     .section-title-text {
-      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-size: clamp(1.15rem, 2.2vw, 1.35rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       color: #ffffff;
@@ -458,38 +503,38 @@
 
     .section-lead {
       color: #cbd5e1;
-      font-size: 1.02rem;
-      margin-bottom: 24px;
-      line-height: 1.6;
-      max-width: 780px;
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+      line-height: 1.55;
+      max-width: 720px;
     }
 
     /* Premium Glass Container */
     .panel-card {
       background: var(--bg-surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: clamp(20px, 3.5vw, 36px);
+      border-radius: 18px;
+      padding: clamp(16px, 2vw, 22px);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
       transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     }
 
     .panel-card:hover {
       border-color: rgba(168, 85, 247, 0.25);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4), 0 0 30px -10px rgba(168, 85, 247, 0.12);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 25px -10px rgba(168, 85, 247, 0.12);
     }
 
     .panel-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: clamp(24px, 4vw, 44px);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: clamp(20px, 3vw, 32px);
       align-items: center;
     }
 
     .panel-grid.reverse {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
     }
 
     /* Clean Key Points List */
@@ -497,7 +542,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 24px;
       padding: 0;
       margin: 0;
     }
@@ -509,23 +554,40 @@
 
     .point-title,
     .point-text > strong:first-child {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 7px;
       color: #c084fc;
-      background: linear-gradient(135deg, #f3e8ff 0%, #c084fc 55%, #818cf8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 1.08rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       letter-spacing: -0.015em;
       line-height: 1.35;
     }
 
+    .point-title .title-text {
+      background: linear-gradient(135deg, #f3e8ff 0%, #c084fc 55%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: #c084fc;
+    }
+
+    .emoji-icon {
+      font-style: normal;
+      font-size: 1.15rem;
+      line-height: 1;
+      display: inline-block;
+      flex-shrink: 0;
+      -webkit-text-fill-color: initial !important;
+      -webkit-background-clip: initial !important;
+    }
+
     .point-text p {
       color: #e2e8f0;
-      font-size: 0.95rem;
-      line-height: 1.65;
+      font-size: 0.92rem;
+      line-height: 1.6;
       margin: 0;
     }
 
@@ -548,14 +610,14 @@
     /* Micro Highlights */
     .callout-pill {
       margin-top: 20px;
-      padding: 12px 14px;
+      padding: 10px 12px;
       border-radius: var(--radius-md);
       background: rgba(168, 85, 247, 0.06);
       border: 1px solid rgba(168, 85, 247, 0.2);
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: flex-start;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: #e2e8f0;
     }
     .callout-pill.green {
@@ -576,59 +638,50 @@
 
     .smartphone-chassis {
       position: relative;
-      background: #020306;
-      border: 2px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-phone);
-      padding: 8px;
-      max-width: min(295px, 85vw);
-      width: 100%;
-      box-shadow: 
-        0 24px 50px -12px rgba(0, 0, 0, 0.9),
-        0 0 0 1px rgba(255, 255, 255, 0.04),
-        0 0 35px -15px var(--primary-glow);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      width: fit-content;
+      max-width: 100%;
       cursor: zoom-in;
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
-    }
-
-    .smartphone-chassis:hover {
-      transform: translateY(-4px);
-      border-color: rgba(168, 85, 247, 0.4);
-      box-shadow: 
-        0 28px 60px -10px rgba(0, 0, 0, 0.95),
-        0 0 0 1px rgba(168, 85, 247, 0.3),
-        0 0 45px -10px var(--primary-glow);
     }
 
     /* Simulated Top Speaker Notch */
     .smartphone-notch {
-      position: absolute;
-      top: 13px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 4px;
-      border-radius: 3px;
-      background: rgba(255, 255, 255, 0.15);
-      z-index: 10;
-      pointer-events: none;
+      display: none;
     }
 
     /* Strict Zero-Crop Guarantee */
     .smartphone-screen {
       display: block;
-      width: 100%;
+      width: auto;
+      max-width: min(245px, 80vw);
       height: auto;
-      max-height: 520px;
+      max-height: 480px;
       object-fit: contain;
-      border-radius: calc(var(--radius-phone) - 8px);
-      background: #000000;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+      background: transparent;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .smartphone-screen:hover {
+      transform: translateY(-2px);
+      border-color: rgba(168, 85, 247, 0.35);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 14px rgba(168, 85, 247, 0.15);
     }
 
     .mockup-subtext {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: #cbd5e1;
-      margin-top: 10px;
+      margin-top: 8px;
       text-align: center;
       display: flex;
       align-items: center;
@@ -688,50 +741,83 @@
       width: 100%;
     }
 
+    .dual-mockups-grid .mockup-wrapper {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+    }
+
+    @media (min-width: 1025px) {
+      .dual-mockups-grid .mockup-wrapper.active-focus {
+        opacity: 1;
+        transform: scale(1.03);
+        z-index: 5;
+      }
+      .dual-mockups-grid .mockup-wrapper.active-focus .smartphone-screen {
+        border-color: rgba(168, 85, 247, 0.55);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(168, 85, 247, 0.2);
+      }
+      .dual-mockups-grid .mockup-wrapper.active-focus .mockup-subtext {
+        color: #ffffff;
+      }
+      .dual-mockups-grid .mockup-wrapper.inactive-dim {
+        opacity: 0.5;
+        transform: scale(0.97);
+        filter: grayscale(20%) brightness(0.85);
+      }
+      .dual-mockups-grid .mockup-wrapper.inactive-dim:hover {
+        opacity: 0.88;
+        transform: scale(0.99);
+        filter: none;
+      }
+    }
+
     /* PDF Sample Feature Card */
     .pdf-download-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
       background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(15, 23, 42, 0.5) 100%);
       border: 1.5px solid rgba(168, 85, 247, 0.28);
-      border-radius: var(--radius-md);
-      padding: clamp(18px, 3vw, 26px);
-      margin-top: 24px;
+      border-radius: 14px;
+      padding: clamp(14px, 2.5vw, 20px);
+      margin-top: 18px;
       flex-wrap: wrap;
     }
 
     .pdf-meta-left {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .pdf-symbol-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
       background: #ef4444;
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: 800;
       flex-shrink: 0;
       box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
     }
 
     .pdf-card-title {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 2px;
     }
 
     .pdf-card-desc {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
 
@@ -740,16 +826,16 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 20px;
+      padding: 9px 16px;
       background: #ffffff;
       color: #06080d;
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.86rem;
-      border-radius: 10px;
+      font-size: 0.82rem;
+      border-radius: 8px;
       transition: all 0.2s ease;
       box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
-      min-height: 42px;
+      min-height: 38px;
     }
 
     .btn-pdf-link:hover {
@@ -826,22 +912,22 @@
 
     /* Ultra-Premium Modern Footer */
     .page-footer {
-      padding-top: 56px;
-      padding-bottom: 36px;
-      margin-top: 72px;
+      padding-top: 40px;
+      padding-bottom: 28px;
+      margin-top: 52px;
     }
 
     .footer-card {
       background: linear-gradient(180deg, rgba(17, 24, 39, 0.75) 0%, rgba(10, 15, 29, 0.95) 100%);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: clamp(20px, 3vw, 32px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: clamp(16px, 2.5vw, 24px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 18px;
     }
 
     .footer-top-row {
@@ -849,38 +935,40 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
     }
 
     .footer-brand-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .footer-brand-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(147, 51, 234, 0.15);
-      border: 1.5px solid rgba(168, 85, 247, 0.35);
-      padding: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(168, 85, 247, 0.4);
+      padding: 0;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 18px rgba(124, 58, 237, 0.25);
       flex-shrink: 0;
+      background: transparent;
     }
 
     .footer-brand-icon img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      border-radius: 7px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
     }
 
     .footer-brand-title {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.02em;
@@ -888,29 +976,29 @@
     }
 
     .footer-brand-tagline {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
     .footer-action-wrap {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     /* Highly Prominent, Clickable Privacy Policy Button */
     .footer-privacy-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 22px;
+      gap: 8px;
+      padding: 10px 18px;
       background: linear-gradient(135deg, rgba(147, 51, 234, 0.3) 0%, rgba(6, 182, 212, 0.25) 100%);
       border: 1.5px solid rgba(168, 85, 247, 0.65);
-      border-radius: 12px;
+      border-radius: 10px;
       color: #ffffff !important;
       text-decoration: none !important;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.01em;
       cursor: pointer;
@@ -1226,7 +1314,7 @@
       <!-- Hero Banner -->
       <section class="hero-box" id="overview">
         <div class="hero-eyebrow">
-          <img src="./assets/pay-Icon.png" alt="PaySplitter App" style="width: 15px; height: 15px; border-radius: 4px; object-fit: contain;">
+          <img src="./assets/pay-Icon.png" alt="PaySplitter App" style="width: 16px; height: 16px; border-radius: 4px; object-fit: cover; display: block;">
           The Official User Guide
         </div>
         <h1 class="hero-heading">Group finances, <span>simplified.</span></h1>
@@ -1255,20 +1343,20 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Real-Time Net Balance Overview</strong>
-                    <p>Instantly see your overall standing across all journeys. Your balance clearly separates <strong>Payable</strong> (money you owe to others) from <strong>Receivable</strong> (money others owe you), keeping your personal finances transparent.</p>
+                    <strong class="point-title"><span class="emoji-icon">📊</span><span class="title-text">Live Net Balance</span></strong>
+                    <p>Instant overview of what you owe (<strong>Payable</strong>) vs. what you're owed (<strong>Receivable</strong>).</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Active Trip Workspaces & Live Ticker</strong>
-                    <p>Each card represents an ongoing or past trip, showing total group spending, participant avatars, and an activity ticker that updates immediately whenever a new expense or settlement occurs.</p>
+                    <strong class="point-title"><span class="emoji-icon">🚀</span><span class="title-text">Active Trip Cards & Ticker</span></strong>
+                    <p>Tap any trip to open details, track running totals, and see real-time expense updates.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Quick Action Dock</strong>
-                    <p>The bottom navigation bar gives you one-tap shortcuts to your trips list, travel route map, in-trip group chat, member roster, archive, and the floating button to create or join a trip.</p>
+                    <strong class="point-title"><span class="emoji-icon">⚡</span><span class="title-text">Quick Navigation Dock</span></strong>
+                    <p>One-tap bottom bar to switch between <strong style="color: #c084fc;">📍 Route Maps</strong>, <strong style="color: #38bdf8;">💬 Group Chat</strong>, <strong style="color: #f87171;">🗑️ Trash</strong>, <strong style="color: #2dd4bf;">👥 Friends</strong>, and <strong style="color: #d8b4fe;">➕ New Trip</strong>.</p>
                   </div>
                 </li>
               </ul>
@@ -1305,20 +1393,20 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Personalized Themes & Travel Icons</strong>
-                    <p>Give your trip a custom identity. Choose from diverse travel icons (flights, road trips, mountains, beaches) and select vibrant gradient materials to style your trip card.</p>
+                    <strong class="point-title"><span class="emoji-icon">🎨</span><span class="title-text">Custom Themes & Icons</span></strong>
+                    <p>Personalize trips with custom travel icons (flights, road trips, beaches) and vibrant gradient themes.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Flexible Dates & Budget Tracking</strong>
-                    <p>Set optional start and end dates to keep expenses organized chronologically. Define a trip budget target to help your group stay on track with spending goals.</p>
+                    <strong class="point-title"><span class="emoji-icon">📅</span><span class="title-text">Dates & Target Budget</span></strong>
+                    <p>Set trip dates and an optional target budget to keep your group spending organized and on track.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Instant Member Entry & Digital Pot</strong>
-                    <p>Add friends simply by typing their names—no phone numbers, passwords, or invitations needed. Toggle on the Digital Pot if your group prefers pooling money upfront.</p>
+                    <strong class="point-title"><span class="emoji-icon">👥</span><span class="title-text">Instant Friend Entry</span></strong>
+                    <p>Add friends simply by typing their names—no phone numbers, passwords, or logins required.</p>
                   </div>
                 </li>
               </ul>
@@ -1345,20 +1433,20 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Quick Bill Logging & Categories</strong>
-                    <p>Enter the bill description, amount, and category (Food, Travel, Stay, Activities). Categories automatically power your visual spending analytics and summary reports.</p>
+                    <strong class="point-title"><span class="emoji-icon">🧾</span><span class="title-text">Quick Bill Logging</span></strong>
+                    <p>Enter bill amounts and pick categories (Food, Travel, Stay, Activities) to auto-generate spending charts.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Custom Payers & Selective Exclusions</strong>
-                    <p>Assign who fronted the money—an individual member or the shared Digital Pot. Use the exclusion filter to easily omit members who did not participate in a specific meal or activity.</p>
+                    <strong class="point-title"><span class="emoji-icon">🔄</span><span class="title-text">Custom Payers & Exclusions</span></strong>
+                    <p>Select who paid (a person or the Digital Pot) and exclude friends who didn't join a specific meal or ride.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Interactive Day Strip & Notes</strong>
-                    <p>Tap through the horizontal calendar strip to assign expenses to specific trip days, and add notes to record invoice details, receipt notes, or vendor info.</p>
+                    <strong class="point-title"><span class="emoji-icon">🗓️</span><span class="title-text">Day Strip & Notes</span></strong>
+                    <p>Assign bills to specific days with the calendar strip and add quick notes for invoice details or receipts.</p>
                   </div>
                 </li>
               </ul>
@@ -1395,14 +1483,14 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">"Who Owes Whom" Smart Settlements</strong>
-                    <p>Our debt simplification algorithm mathematically minimizes crisscrossed debts into the smallest possible number of direct transfers, saving everyone from endless back-and-forth payments.</p>
+                    <strong class="point-title"><span class="emoji-icon">⚡</span><span class="title-text">Smart Debt Simplification</span></strong>
+                    <p>Our algorithm collapses messy group IOUs into the fewest direct transfers, saving everyone from endless back-and-forth payments.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Individual Contribution Ledger</strong>
-                    <p>A transparent breakdown detailing what each person spent versus their fair share. Positive balances highlight members who are owed money, while negative balances show amounts to be settled.</p>
+                    <strong class="point-title"><span class="emoji-icon">📈</span><span class="title-text">Individual Member Ledger</span></strong>
+                    <p>Transparent summary showing what each member spent vs their fair share, with green (+) and red (-) balance tags.</p>
                   </div>
                 </li>
               </ul>
@@ -1441,7 +1529,8 @@
               </div>
               <div class="mockup-subtext"><span>Fig 5.1</span> Pay Now: Instant UPI Launch</div>
               <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
-                Tap <strong>Pay Now</strong> to launch Google Pay, PhonePe, or Paytm with the receiver's UPI ID and amount pre-filled, or tap <strong>Mark as Paid</strong>.
+                <strong style="color: #c084fc; display: block; margin-bottom: 4px;"><span class="emoji-icon">⚡</span> <span class="title-text">Instant UPI Launch</span></strong>
+                Tap <strong>Pay Now</strong> to open Google Pay, PhonePe, or Paytm with the receiver's UPI ID & amount pre-filled.
               </p>
             </div>
 
@@ -1453,7 +1542,8 @@
               </div>
               <div class="mockup-subtext"><span>Fig 5.2</span> Paid Status: Verification & History</div>
               <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
-                Track pending confirmations, send gentle reminder nudges, and view permanent verified settlement receipts.
+                <strong style="color: #c084fc; display: block; margin-bottom: 4px;"><span class="emoji-icon">✅</span> <span class="title-text">Verification & Receipts</span></strong>
+                Track confirmations, send gentle nudges, and view permanent settlement receipts.
               </p>
             </div>
           </div>
@@ -1474,14 +1564,14 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Real-Time Activity Feed</strong>
-                    <p>Every logged bill, pot deposit, and settlement is recorded in a clean chronological stream with member avatars and timestamps so you always know what changed and when.</p>
+                    <strong class="point-title"><span class="emoji-icon">🕒</span><span class="title-text">Real-Time Activity Feed</span></strong>
+                    <p>Chronological timeline of all added bills, pot deposits, and settlements with member names and timestamps.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Audit Transparency & Accountability</strong>
-                    <p>Provides a permanent record of past actions, preventing misunderstandings and ensuring total team trust throughout the journey.</p>
+                    <strong class="point-title"><span class="emoji-icon">🔍</span><span class="title-text">Total Transparency</span></strong>
+                    <p>Permanent audit record of all past actions to prevent confusion and maintain group trust.</p>
                   </div>
                 </li>
               </ul>
@@ -1518,14 +1608,14 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Key Insight Cards</strong>
-                    <p>Spotlight tiles highlight the trip's <strong>Top Spender</strong>, highest expenditure <strong>Category</strong>, and the single <strong>Largest Expense</strong> logged so far.</p>
+                    <strong class="point-title"><span class="emoji-icon">🏆</span><span class="title-text">Key Insight Badges</span></strong>
+                    <p>Spotlight tiles for <strong>Top Spender</strong>, highest <strong>Category</strong>, and largest single expense.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Category Proportions & Member Details</strong>
-                    <p>A sleek segmented proportion bar illustrates spending distribution across categories, backed by expandable cards detailing each member's contributions.</p>
+                    <strong class="point-title"><span class="emoji-icon">📊</span><span class="title-text">Visual Spending Breakdown</span></strong>
+                    <p>Proportion bar shows spending across categories, with summaries for each member's share.</p>
                   </div>
                 </li>
               </ul>
@@ -1548,26 +1638,26 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Shared Group Kitty & Live Meter</strong>
-                    <p>Collect equal upfront funds into a digital pot before traveling. Monitor total funded amounts versus spent balances in real time, and top up whenever needed.</p>
+                    <strong class="point-title"><span class="emoji-icon">🍯</span><span class="title-text">Shared Group Kitty</span></strong>
+                    <p>Pool upfront funds for fuel, tolls, and shared meals without daily micro-splits.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Smart Pot Equalization Engine</strong>
-                    <p>If members deposit unequal amounts into the pot, the built-in Equalization calculator automatically determines the exact leveling transfers to keep everyone's contribution fair.</p>
+                    <strong class="point-title"><span class="emoji-icon">⚖️</span><span class="title-text">Smart Equalization</span></strong>
+                    <p>Automatically balances unequal deposits so everyone contributes their exact fair share.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Frictionless Communal Spending</strong>
-                    <p>Pay for fuel, tolls, snacks, and shared meals directly from the Pot without calculating per-person micro-splits on the go.</p>
+                    <strong class="point-title"><span class="emoji-icon">💸</span><span class="title-text">Communal Spending</span></strong>
+                    <p>Pay shared bills directly from the Pot with live balance tracking.</p>
                   </div>
                 </li>
               </ul>
               <div class="callout-pill green">
                 <span>🍯</span>
-                <div><strong>Traveler Favorite:</strong> Eliminates 80% of small payment friction during road trips and group vacations.</div>
+                <div><strong>Traveler Favorite:</strong> Eliminates 80% of payment hassles on road trips and group vacations.</div>
               </div>
             </div>
             <div class="mockup-wrapper">
@@ -1602,20 +1692,20 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Driving Distance & Time Estimates</strong>
-                    <p>The top route overview displays total planned stops, total driving distance, and estimated travel duration across your journey.</p>
+                    <strong class="point-title"><span class="emoji-icon">📍</span><span class="title-text">GPS Route & Checkpoints</span></strong>
+                    <p>Visual travel corridor mapping numbered stops from departure to destination.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Numbered Checkpoint Timeline</strong>
-                    <p>Color-coded waypoints map your complete travel route from departure to final destination, showing distances and driving times between each stop.</p>
+                    <strong class="point-title"><span class="emoji-icon">⏱️</span><span class="title-text">Distance & Driving Times</span></strong>
+                    <p>Instant estimates of total trip distance and travel duration between stops.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Route Controls & Navigation</strong>
-                    <p>Easily edit stops, toggle return routes for round trips, or launch active navigation in your preferred maps application.</p>
+                    <strong class="point-title"><span class="emoji-icon">🧭</span><span class="title-text">Navigation Ready</span></strong>
+                    <p>Edit stops on the fly or open directions directly in Google Maps.</p>
                   </div>
                 </li>
               </ul>
@@ -1638,20 +1728,20 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Pinned Cloud Drive Folders</strong>
-                    <p>Pin essential group assets—such as shared Google Drive folders for trip photos, tickets, and bookings—directly to the top of the chat for instant access.</p>
+                    <strong class="point-title"><span class="emoji-icon">📌</span><span class="title-text">Pinned Cloud Folders</span></strong>
+                    <p>Pin Google Drive folders for trip photos, tickets, and bookings at the top of chat.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Location Pins & Group Messaging</strong>
-                    <p>Share clickable Google Maps location pins, packing checklists, and announcements without cluttering personal messaging apps.</p>
+                    <strong class="point-title"><span class="emoji-icon">📍</span><span class="title-text">Location Pins & Lists</span></strong>
+                    <p>Share map pins, packing checklists, and announcements in a dedicated stream.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Context-Locked Discussions</strong>
-                    <p>Every message and link stays attached to the specific trip, making it effortless to retrieve past memories and recommendations.</p>
+                    <strong class="point-title"><span class="emoji-icon">💬</span><span class="title-text">Trip-Locked Context</span></strong>
+                    <p>Keeps memories, receipts, and plans organized per trip without WhatsApp clutter.</p>
                   </div>
                 </li>
               </ul>
@@ -1693,7 +1783,8 @@
               </div>
               <div class="mockup-subtext"><span>Fig 11.1</span> Host View: Share via Code or Email</div>
               <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
-                Generate an easy 4-character code to share via WhatsApp, or send direct email invitations to participants.
+                <strong style="color: #c084fc; display: block; margin-bottom: 4px;"><span class="emoji-icon">📤</span> <span class="title-text">Host View (Share)</span></strong>
+                Share an easy 4-character code or send direct invites via WhatsApp and Email.
               </p>
             </div>
 
@@ -1705,7 +1796,8 @@
               </div>
               <div class="mockup-subtext"><span>Fig 11.2</span> Guest View: Enter Code to Join</div>
               <p style="font-size: 0.92rem; color: #e2e8f0; text-align: center; margin-top: 10px; max-width: 290px; line-height: 1.55;">
-                Guests simply tap "Join a Trip", type the 4-digit code, and instantly sync the complete shared ledger.
+                <strong style="color: #c084fc; display: block; margin-bottom: 4px;"><span class="emoji-icon">📥</span> <span class="title-text">Guest View (Join)</span></strong>
+                Friends enter the 4-digit code to instantly sync the full shared trip ledger.
               </p>
             </div>
           </div>
@@ -1726,14 +1818,14 @@
               <ul class="keypoints">
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">Custom 4-Digit PIN Security</strong>
-                    <p>Lock your app behind a custom 4-digit PIN using an intuitive dark touch dialpad, safeguarding sensitive balance sheets from curious eyes.</p>
+                    <strong class="point-title"><span class="emoji-icon">🔒</span><span class="title-text">4-Digit PIN Protection</span></strong>
+                    <p>Lock your balance sheets and trip data behind a custom touch keypad PIN.</p>
                   </div>
                 </li>
                 <li class="point-item">
                   <div class="point-text">
-                    <strong class="point-title">100% Offline Local Sovereignty</strong>
-                    <p>All expense calculations, balances, and chat notes are stored strictly on your local device—ensuring complete privacy with zero external tracking.</p>
+                    <strong class="point-title"><span class="emoji-icon">🛡️</span><span class="title-text">100% Offline & Private</span></strong>
+                    <p>All data stays strictly on your local device with zero tracking or external servers.</p>
                   </div>
                 </li>
               </ul>
@@ -1761,14 +1853,14 @@
           <ul class="keypoints">
             <li class="point-item">
               <div class="point-text">
-                <strong class="point-title">Multi-Page Printable PDF Statements</strong>
-                <p>Generate clean, beautifully formatted trip summaries with complete expense ledgers, visual category breakdowns, and simplified settlement transfers with payee UPI details.</p>
+                <strong class="point-title"><span class="emoji-icon">📄</span><span class="title-text">Multi-Page Printable PDF</span></strong>
+                <p>Clean trip summaries with expense ledgers, visual breakdown, and UPI payee details.</p>
               </div>
             </li>
             <li class="point-item">
               <div class="point-text">
-                <strong class="point-title">Offline JSON Backups</strong>
-                <p>Download portable backup files to archive your full trip history offline or easily migrate your data when switching phones.</p>
+                <strong class="point-title"><span class="emoji-icon">💾</span><span class="title-text">Offline JSON Backups</span></strong>
+                <p>Portable backup files to archive trips or switch phones effortlessly.</p>
               </div>
             </li>
           </ul>
@@ -1918,15 +2010,19 @@
       });
     });
 
-    // 3. Unified Tab Switching for Dual Screens
+    // 3. Unified Tab Switching for Dual Screens (Mobile Drawer + Laptop Zoom Spotlight)
     function switchTab(group, tab, btn) {
-      btn.parentElement.querySelectorAll('.tab-pill-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if (btn) {
+        btn.parentElement.querySelectorAll('.tab-pill-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
+      const isMobile = window.innerWidth <= 1024;
 
       if (group === 'settle') {
         const payNow = document.getElementById('settle-paynow');
         const paidStatus = document.getElementById('settle-paidstatus');
-        if (window.innerWidth <= 1024) {
+        if (isMobile) {
           if (tab === 'paynow') {
             payNow.style.display = 'flex';
             paidStatus.style.display = 'none';
@@ -1934,17 +2030,45 @@
             payNow.style.display = 'none';
             paidStatus.style.display = 'flex';
           }
+        } else {
+          payNow.style.display = 'flex';
+          paidStatus.style.display = 'flex';
+          if (tab === 'paynow') {
+            payNow.classList.add('active-focus');
+            payNow.classList.remove('inactive-dim');
+            paidStatus.classList.remove('active-focus');
+            paidStatus.classList.add('inactive-dim');
+          } else {
+            paidStatus.classList.add('active-focus');
+            paidStatus.classList.remove('inactive-dim');
+            payNow.classList.remove('active-focus');
+            payNow.classList.add('inactive-dim');
+          }
         }
       } else if (group === 'share') {
         const host = document.getElementById('share-host');
         const guest = document.getElementById('share-guest');
-        if (window.innerWidth <= 1024) {
+        if (isMobile) {
           if (tab === 'host') {
             host.style.display = 'flex';
             guest.style.display = 'none';
           } else {
             host.style.display = 'none';
             guest.style.display = 'flex';
+          }
+        } else {
+          host.style.display = 'flex';
+          guest.style.display = 'flex';
+          if (tab === 'host') {
+            host.classList.add('active-focus');
+            host.classList.remove('inactive-dim');
+            guest.classList.remove('active-focus');
+            guest.classList.add('inactive-dim');
+          } else {
+            guest.classList.add('active-focus');
+            guest.classList.remove('inactive-dim');
+            host.classList.remove('active-focus');
+            host.classList.add('inactive-dim');
           }
         }
       }
@@ -1961,15 +2085,51 @@
         }
       });
       if (isMobile) {
-        // Default to first tab on mobile
-        const paidStatus = document.getElementById('settle-paidstatus');
-        const guest = document.getElementById('share-guest');
-        if (paidStatus) paidStatus.style.display = 'none';
-        if (guest) guest.style.display = 'none';
+        // Default to active tab on mobile
+        const settleActive = document.querySelector('#settle-up .tab-pill-btn.active');
+        const shareActive = document.querySelector('#share-join .tab-pill-btn.active');
+        const settleTab = settleActive?.getAttribute('onclick')?.includes('paidstatus') ? 'paidstatus' : 'paynow';
+        const shareTab = shareActive?.getAttribute('onclick')?.includes('guest') ? 'guest' : 'host';
+        switchTab('settle', settleTab, settleActive);
+        switchTab('share', shareTab, shareActive);
+      } else {
+        // Laptop / desktop spotlight
+        const settleActive = document.querySelector('#settle-up .tab-pill-btn.active');
+        const shareActive = document.querySelector('#share-join .tab-pill-btn.active');
+        const settleTab = settleActive?.getAttribute('onclick')?.includes('paidstatus') ? 'paidstatus' : 'paynow';
+        const shareTab = shareActive?.getAttribute('onclick')?.includes('guest') ? 'guest' : 'host';
+        switchTab('settle', settleTab, settleActive);
+        switchTab('share', shareTab, shareActive);
       }
     }
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    // Click on mockup cards on laptop to focus & switch tab
+    document.getElementById('settle-paynow')?.addEventListener('click', () => {
+      if (window.innerWidth > 1024) {
+        const btn = document.querySelector('#settle-up .tab-pill-btn:nth-child(1)');
+        switchTab('settle', 'paynow', btn);
+      }
+    });
+    document.getElementById('settle-paidstatus')?.addEventListener('click', () => {
+      if (window.innerWidth > 1024) {
+        const btn = document.querySelector('#settle-up .tab-pill-btn:nth-child(2)');
+        switchTab('settle', 'paidstatus', btn);
+      }
+    });
+    document.getElementById('share-host')?.addEventListener('click', () => {
+      if (window.innerWidth > 1024) {
+        const btn = document.querySelector('#share-join .tab-pill-btn:nth-child(1)');
+        switchTab('share', 'host', btn);
+      }
+    });
+    document.getElementById('share-guest')?.addEventListener('click', () => {
+      if (window.innerWidth > 1024) {
+        const btn = document.querySelector('#share-join .tab-pill-btn:nth-child(2)');
+        switchTab('share', 'guest', btn);
+      }
+    });
 
     // 4. Instant Search & Filtering (Desktop & Mobile Sync)
     const searchInput = document.getElementById('searchInput');
