@@ -712,6 +712,7 @@
       <div class="nav-links">
         <a href="#collect" class="nav-link">Collect</a>
         <a href="#use" class="nav-link">Usage</a>
+        <a href="#payments" class="nav-link">Payments</a>
         <a href="#rights" class="nav-link">Rights</a>
         <a href="#third-party" class="nav-link">Security</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -730,7 +731,7 @@
         We designed PaySplitter with zero ad trackers, no data brokers, and full transparent control over your financial records.
       </p>
       <div class="hero-meta">
-        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Last updated: August 2026</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Last updated: September 2026</span>
         <span>•</span>
         <span>v5.21 Compliant</span>
       </div>
@@ -774,6 +775,14 @@
           <h3>Feedback &amp; Communication</h3>
           <p>Voluntary star ratings, suggestion notes, and troubleshooting feedback submitted through our in-app feedback channel.</p>
         </div>
+
+        <div class="glass-card full-width">
+          <div class="card-icon" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(56, 189, 248, 0.14)); border-color: rgba(16, 185, 129, 0.35); color: #10b981;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Optional Payment Identifiers (UPI IDs)</h3>
+          <p>You may optionally save a Virtual Payment Address (UPI ID) such as <code style="font-family:'JetBrains Mono',monospace; color:#38bdf8; background:rgba(56,189,248,0.1); padding:2px 6px; border-radius:4px;">username@bank</code> to facilitate peer settlements. This is <strong>100% optional</strong>. We <strong>never</strong> collect or store bank account numbers, debit/credit cards, UPI PINs, CVVs, or OTPs.</p>
+        </div>
       </div>
     </section>
 
@@ -809,6 +818,14 @@
           </div>
         </li>
         <li class="feature-item">
+          <div class="feature-check" style="background: rgba(16, 185, 129, 0.14); color: #10b981;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="feature-text">
+            <strong>Peer-to-Peer Settle Up &amp; QR Intent Linking:</strong> Generates universal UPI intent deep-links and QR codes so trip members can settle dues directly via external banking apps (Google Pay, PhonePe, Paytm, BHIM) without financial intermediation.
+          </div>
+        </li>
+        <li class="feature-item">
           <div class="feature-check">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
@@ -824,9 +841,55 @@
       </div>
     </section>
 
-    <!-- 03. Data Deletion & Rights -->
-    <section id="rights" class="reveal">
+    <!-- 03. Payment Details & Settle Up -->
+    <section id="payments" class="reveal">
       <div class="sec-tag">Section 03</div>
+      <h2>Payment Details &amp; Settle Up Handling</h2>
+      <p class="sec-intro">PaySplitter is an expense calculation tool, not a financial broker. Here is how we handle voluntary payment identifiers and Settle Up transfers:</p>
+
+      <div class="grid-2">
+        <div class="glass-card">
+          <div class="card-icon" style="background: rgba(16, 185, 129, 0.14); color: #10b981; border-color: rgba(16, 185, 129, 0.35);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3>100% Optional &amp; Voluntary</h3>
+          <p>Adding a UPI ID is completely optional. All splitting algorithms, Digital Pot ledgers, and trip balances function completely without saving any payment details.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon" style="background: rgba(56, 189, 248, 0.14); color: #38bdf8; border-color: rgba(56, 189, 248, 0.35);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Zero Financial Intermediation</h3>
+          <p>We do not touch, process, or hold any money. We never ask for UPI PINs, CVVs, or OTPs. Payments occur directly peer-to-peer via your installed UPI apps.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon" style="background: rgba(168, 85, 247, 0.14); color: #a855f7; border-color: rgba(168, 85, 247, 0.35);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Trip-Level Member Visibility</h3>
+          <p>Your saved UPI ID is only visible to members inside your shared private trips in the Settle Up screen so they can copy your VPA or scan your QR code to pay dues.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon" style="background: rgba(245, 158, 11, 0.14); color: #f59e0b; border-color: rgba(245, 158, 11, 0.35);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Export PDF Policy</h3>
+          <p>The "Receiver UPI Details" section is included in exported PDF summaries <strong>only if</strong> members have voluntarily saved a UPI ID. If no UPI IDs exist, the section is completely omitted.</p>
+        </div>
+      </div>
+
+      <div class="banner-trust" style="margin-top: 18px; border-color: rgba(16, 185, 129, 0.35); background: linear-gradient(135deg, rgba(16, 185, 129, 0.09), rgba(56, 189, 248, 0.09));">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p>Complete Control &amp; Deletion: You can edit or permanently delete your saved UPI ID at any time from your Profile drawer. Removing it immediately wipes it from cloud database synchronization.</p>
+      </div>
+    </section>
+
+    <!-- 04. Data Deletion & Rights -->
+    <section id="rights" class="reveal">
+      <div class="sec-tag">Section 04</div>
       <h2>Data Deletion &amp; Your Rights</h2>
       <p class="sec-intro">In full accordance with GDPR and Google Play Developer Policies, you possess the absolute <strong>Right to be Forgotten</strong>. You can permanently erase your entire profile and login credentials directly from inside the app.</p>
 
@@ -870,9 +933,9 @@
       </div>
     </section>
 
-    <!-- 04. Infrastructure & Security -->
+    <!-- 05. Infrastructure & Security -->
     <section id="third-party" class="reveal">
-      <div class="sec-tag">Section 04</div>
+      <div class="sec-tag">Section 05</div>
       <h2>Infrastructure &amp; Security</h2>
       <p class="sec-intro">We rely strictly on battle-tested, enterprise-grade cloud providers with automated encryption protocols.</p>
 
@@ -903,9 +966,9 @@
       </div>
     </section>
 
-    <!-- 05. Contact -->
+    <!-- 06. Contact -->
     <section id="contact" class="reveal">
-      <div class="sec-tag">Section 05</div>
+      <div class="sec-tag">Section 06</div>
       <h2>Contact &amp; Support</h2>
       <p class="sec-intro">Have questions regarding your data or security practices? Get in touch with the lead developer directly.</p>
 
